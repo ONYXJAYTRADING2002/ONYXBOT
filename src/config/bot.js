@@ -11,7 +11,7 @@ export const botConfig = {
   // - "invisible" = appears offline
   presence: {
     // Current online state shown on Discord.
-    status: "online",
+    status: "idle",
 
     // Activity lines shown under the bot name.
     // `type` number mapping from Discord:
@@ -23,9 +23,9 @@ export const botConfig = {
     // 5 = Competing
     activities: [
       {
-        name: "Custom Status", // required by Discord API, not shown in the client
-        state: "stalking",     // this is what people actually see
-        type: 4,               // Custom
+        name: "ONYXJAY🌌", // required by Discord API, not shown in the client
+        state: "Listenng",     // this is what people actually see
+        type: 2,               // Custom
       },
     ],
   },
@@ -93,8 +93,8 @@ export const botConfig = {
   embeds: {
     colors: {
       // Main brand colors.
-      primary: "#336699",
-      secondary: "#2F3136",
+      primary: "#301934",
+      secondary: "#00008B",
 
       // Standard status colors for success/error/warning/info messages.
       success: "#57F287",
@@ -161,25 +161,25 @@ export const botConfig = {
   economy: {
     currency: {
       // Currency display name.
-      name: "coins",
+      name: "galaxys",
       // Plural display name.
-      namePlural: "coins",
+      namePlural: "galaxys",
       // Currency symbol shown in balances.
-      symbol: "$",
+      symbol: "🌌",
     },
 
     // Starting balance for new users.
-    startingBalance: 0,
+    startingBalance: 2000,
 
     // Maximum bank amount before upgrades (if upgrades are used).
     baseBankCapacity: 100000,
 
     // Daily reward amount.
-    dailyAmount: 100,
+    dailyAmount: 500,
 
     // Work command random payout range.
-    workMin: 10,
-    workMax: 100,
+    workMin: 100,
+    workMax: 250,
 
     // Beg command random payout range.
     begMin: 5,
