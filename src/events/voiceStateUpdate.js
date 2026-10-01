@@ -32,24 +32,28 @@ export default {
         try {
             const config = await getJoinToCreateConfig(client, guildId);
 
-            if (!config.enabled || config.triggerChannels.length === 0) {
-                return;
-            }
+            if (config.enabled && config.triggerChannels.length > 0) {
+                if (!oldState.channel && newState.channel) {
+                    await handleVoiceJoin(client, newState, config);
+                }
 
-            if (!oldState.channel && newState.channel) {
-                await handleVoiceJoin(client, newState, config);
-            }
+                if (oldState.channel && !newState.channel) {
+                    await handleVoiceLeave(client, oldState, config);
+                }
 
-            if (oldState.channel && !newState.channel) {
-                await handleVoiceLeave(client, oldState, config);
-            }
-
-            if (oldState.channel && newState.channel && oldState.channel.id !== newState.channel.id) {
-                await handleVoiceMove(client, oldState, newState, config);
+                if (oldState.channel && newState.channel && oldState.channel.id !== newState.channel.id) {
+                    await handleVoiceMove(client, oldState, newState, config);
+                }
             }
 
         } catch (error) {
             logger.error(`Error in voiceStateUpdate for guild ${guildId}:`, error);
+        }
+
+        try {
+            await handleMusicVoiceState(client, oldState, newState);
+        } catch (error) {
+            logger.error('Music voice state handler error:', error);
         }
 
         async function handleVoiceJoin(client, state, config) {
@@ -283,12 +287,6 @@ userLimit: userLimit === 0 ? undefined : userLimit,
             } catch (error) {
                 logger.error(`Failed to transfer ownership of channel ${channel.id}:`, error);
             }
-        }
-
-        if (client.config?.features?.music) {
-            handleMusicVoiceState(client, oldState, newState).catch((error) => {
-                logger.error('Music voice state handler error:', error);
-            });
         }
     }
 };
