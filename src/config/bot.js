@@ -11,7 +11,7 @@ export const botConfig = {
   // - "invisible" = appears offline
   presence: {
     // Current online state shown on Discord.
-    status: "online",
+    status: "idle",
 
     // Activity lines shown under the bot name.
     // `type` number mapping from Discord:
@@ -23,8 +23,8 @@ export const botConfig = {
     // 5 = Competing
     activities: [
       {
-        name: "Custom Status", // required by Discord API, not shown in the client
-        state: "stalking",     // this is what people actually see
+        name: "ONYX COMMUNITY", // required by Discord API, not shown in the client
+        state: "searching",     // this is what people actually see
         type: 4,               // Custom
       },
     ],
@@ -61,8 +61,8 @@ export const botConfig = {
   applications: {
     // Default questions shown when someone fills out an application.
     defaultQuestions: [
-      { question: "What is your name?", required: true },
-      { question: "How old are you?", required: true },
+      { question: "I dont have a name?", required: true },
+      { question: "i am older than our milkyway🌌?", required: true },
       { question: "Why do you want to join?", required: true },
     ],
 
@@ -93,8 +93,8 @@ export const botConfig = {
   embeds: {
     colors: {
       // Main brand colors.
-      primary: "#336699",
-      secondary: "#2F3136",
+      primary: "#301934",
+      secondary: "#00008B",
 
       // Standard status colors for success/error/warning/info messages.
       success: "#57F287",
@@ -163,27 +163,27 @@ export const botConfig = {
       // Currency display name.
       name: "coins",
       // Plural display name.
-      namePlural: "coins",
+      namePlural: "GALAXYS",
       // Currency symbol shown in balances.
-      symbol: "$",
+      symbol: "🌌",
     },
 
     // Starting balance for new users.
-    startingBalance: 0,
+    startingBalance: 2000,
 
     // Maximum bank amount before upgrades (if upgrades are used).
     baseBankCapacity: 100000,
 
     // Daily reward amount.
-    dailyAmount: 100,
+    dailyAmount: 500,
 
     // Work command random payout range.
     workMin: 10,
     workMax: 100,
 
     // Beg command random payout range.
-    begMin: 5,
-    begMax: 50,
+    begMin: 20,
+    begMax: 175,
 
     // Command cooldowns (milliseconds).
     cooldowns: {
@@ -194,7 +194,7 @@ export const botConfig = {
     },
 
     // Chance to succeed when robbing (0.4 = 40%).
-    robSuccessRate: 0.4,
+    robSuccessRate: 0.6,
 
     // Jail time after failed rob (milliseconds).
     // 3600000 = 1 hour.
