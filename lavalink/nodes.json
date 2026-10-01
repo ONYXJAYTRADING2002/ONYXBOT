@@ -1,5 +1,12 @@
 [
   {
+    "host": "lavalink.rocks",
+    "port": 443,
+    "password": "BatuManaBisa",
+    "secure": true,
+    "name": "LavalinkRocks"
+  },
+  {
     "host": "lavalinkv4.serenetia.com",
     "port": 443,
     "password": "https://seretia.link/discord",
@@ -7,24 +14,17 @@
     "name": "Serenetia"
   },
   {
+    "host": "lava-v4.ajieblogs.eu.org",
+    "port": 443,
+    "password": "https://dsc.gg/ajidevserver",
+    "secure": true,
+    "name": "AjieDev"
+  },
+  {
     "host": "lavalink.jirayu.net",
     "port": 443,
     "password": "youshallnotpass",
     "secure": true,
     "name": "Jirayu"
-  },
-  {
-    "host": "lava-v4.millohost.my.id",
-    "port": 443,
-    "password": "https://discord.gg/mjS5J2K3ep",
-    "secure": true,
-    "name": "MilloHost"
-  },
-  {
-    "host": "lavalink-v4.triniumhost.com",
-    "port": 443,
-    "password": "free",
-    "secure": true,
-    "name": "TriniumHost"
   }
 ]
